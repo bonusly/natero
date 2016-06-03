@@ -42,6 +42,12 @@ module Natero
   def self.api_key_uri
     '?api_key=' + Natero.configuration.account_api_key
   end
+
+  def self.to_records_json(objects)
+    {
+      'records' => objects.map(&:to_json)
+    }
+  end
 end
 
 require_relative 'natero/serializable'
