@@ -10,6 +10,9 @@
 /test/version_tmp/
 /tmp/
 
+## Ignore RubyMine
+.idea/
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
