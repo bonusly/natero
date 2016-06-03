@@ -1,5 +1,6 @@
 class Natero::Account
   include HTTParty
+  include Serializable
 
   attr_reader :account_id, :name, :join_date, :renewal_date,
               :billing_account_id, :support_account_id, :crm_account_id,

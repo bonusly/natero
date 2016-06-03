@@ -4,7 +4,8 @@ module Serializable
   def serialize
     obj = {}
     instance_variables.map do |var|
-      obj[var] = instance_variable_get(var)
+      iv = instance_variable_get(var)
+      obj[var] = iv unless iv.nil?
     end
 
     @@serializer.dump obj

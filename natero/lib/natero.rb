@@ -44,5 +44,6 @@ module Natero
   end
 end
 
+require_relative 'natero/serializable'
 require_relative 'natero/account'
 require_relative 'natero/response'
