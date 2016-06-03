@@ -3,6 +3,8 @@ require 'json'
 require 'pry'
 
 module Natero
+  include Serializable
+
   # TODO sandbox available?
   PRODUCTION_URI = 'https://api.natero.com'
 
@@ -13,9 +15,9 @@ module Natero
 
     def initialize
       self.base_uri = PRODUCTION_URI
-      self.account_api_key = nil
-      self.event_api_key = nil
-      self.event_auth_key = nil
+      self.account_api_key = 'bxwfivxgxulhmyxivwgnmmmalroiy86c'
+      self.event_api_key = 'jjpgkgtbtwdegxuirme5mtu7kr6o8u3k'
+      self.event_auth_key = 'd745b6cd859839ea5828bc5ad85d7a10'
     end
   end
 
@@ -45,7 +47,7 @@ module Natero
 
   def self.to_records_json(objects)
     {
-      'records' => Array(objects).map(&:to_json)
+      'records' => Array(objects).map(&:serialize)
     }
   end
 end
