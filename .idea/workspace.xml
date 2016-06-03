@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1372ab0e-9e2f-4789-be91-7b236ae47ee8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/natero/lib/natero/version.rb" afterPath="$PROJECT_DIR$/natero/lib/natero/version.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/natero/natero.gemspec" afterPath="$PROJECT_DIR$/natero/natero.gemspec" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/natero/lib/natero.rb" afterPath="$PROJECT_DIR$/natero/lib/natero.rb" />
     </list>
     <ignored path="natero.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,21 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="natero.gemspec" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/natero/natero.gemspec">
+      <file leaf-file-name="natero.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/natero/lib/natero.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/natero/lib/natero/version.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+            <state relative-caret-position="240">
+              <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -55,6 +44,7 @@
       <list>
         <option value="$PROJECT_DIR$/natero/natero.gemspec" />
         <option value="$PROJECT_DIR$/natero/lib/natero/version.rb" />
+        <option value="$PROJECT_DIR$/natero/lib/natero.rb" />
       </list>
     </option>
   </component>
@@ -142,6 +132,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="spec" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="natero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="natero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="natero" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -190,12 +198,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1464968313630</updated>
-      <workItem from="1464968315070" duration="666000" />
+      <workItem from="1464968315070" duration="975000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="666000" />
+    <option name="totallyTimeSpent" value="975000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="714" extended-state="6" />
@@ -236,6 +244,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/natero/CODE_OF_CONDUCT.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="16" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/natero/lib/natero/version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="19" selection-start-line="1" selection-start-column="19" selection-end-line="1" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/natero/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/natero/spec/natero_spec.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/natero/natero.gemspec">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -244,10 +284,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/natero/lib/natero/version.rb">
+    <entry file="file://$PROJECT_DIR$/natero/lib/natero.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        <state relative-caret-position="240">
+          <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding />
         </state>
       </provider>
