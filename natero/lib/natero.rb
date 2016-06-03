@@ -45,7 +45,7 @@ module Natero
 
   def self.to_records_json(objects)
     {
-      'records' => objects.map(&:to_json)
+      'records' => Array(objects).map(&:to_json)
     }
   end
 end
