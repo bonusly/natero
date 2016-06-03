@@ -10,8 +10,6 @@ class Natero::Account
               :assigned_csms, :custom_label_dimensions, :custom_value_dimensions,
               :custom_event_dimensions, :stage_history, :nps_history, :raw_response
 
-  private_class_method :new
-
   # http://apidocs.natero.com/apidoc.html#Accounts_Retrieve%20all%20accounts
   def self.retrieve_all
     Natero::Response.new(get(endpoint))
