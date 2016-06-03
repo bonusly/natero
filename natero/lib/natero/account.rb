@@ -131,4 +131,8 @@ class Natero::Account
     @nps_history = params['nps_history']
     @raw_response = raw_response
   end
+
+  def to_json
+    serialize
+  end
 end
