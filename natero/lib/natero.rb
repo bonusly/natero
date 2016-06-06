@@ -3,7 +3,6 @@ require 'json'
 require 'pry'
 
 module Natero
-  # TODO sandbox available?
   PRODUCTION_URI = 'https://api.natero.com'
 
   API_VERSION_URI = '/api/v2'
