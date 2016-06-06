@@ -44,9 +44,7 @@ module Natero
   end
 
   def self.to_records_json(objects)
-    {
-      'records' => Array(objects).map(&:serialize)
-    }
+    "{\"records\": #{Array(objects).map(&:serialize)}}".to_s.delete('\\').gsub('"{', '{').gsub('}"', '}')
   end
 end
 

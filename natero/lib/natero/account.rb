@@ -23,12 +23,14 @@ class Natero::Account
 
   # http://apidocs.natero.com/apidoc.html#Accounts_Bulk%20insert%2Fmodify%20accounts
   def self.bulk_insert_modify(accounts)
-    Natero::Response.new(post(endpoint, { :body => Natero.to_records_json(accounts) }))
+    body = Natero.to_records_json(accounts)
+    Natero::Response.new(post(endpoint, { :body => body }))
   end
 
   # http://apidocs.natero.com/apidoc.html#Accounts_Modify%20an%20account
   def self.modify(id, account)
-    Natero::Response.new(put(endpoint(id), { :body => account.to_json }))
+    body = account.to_json
+    Natero::Response.new(put(endpoint(id), { :body => body }))
   end
 
   # http://apidocs.natero.com/apidoc.html#Accounts_Retrieve%20custom%20metrics
