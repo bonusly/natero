@@ -17,4 +17,8 @@ module Serializable
       instance_variable_set(key, obj[key])
     end
   end
+
+  def to_h
+    @@serializer.parse serialize
+  end
 end

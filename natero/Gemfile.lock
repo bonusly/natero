@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    natero (0.1.0)
+    natero (1.0.0)
       httparty (~> 0.13)
 
 GEM

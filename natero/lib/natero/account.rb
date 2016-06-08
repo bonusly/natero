@@ -97,7 +97,8 @@ class Natero::Account
   end
 
   def self.endpoint(*params)
-    Natero.full_endpoint_uri(BASE_URI, VERSION_URI, 'accounts', params)
+    params = ['accounts'] + params + [Natero.api_key_uri]
+    Natero.full_endpoint_uri(BASE_URI, VERSION_URI, params)
   end
 
   def initialize(params, raw_response = nil)

@@ -7,9 +7,9 @@ module Natero
     attr_accessor :base_uri, :account_api_key, :event_api_key, :event_auth_key
 
     def initialize
-      self.account_api_key = nil
-      self.event_api_key = nil
-      self.event_auth_key = nil
+      self.account_api_key = '6zy5dxflzyx7bmoz7aodqnwyu3iub4xe'
+      self.event_api_key = 'hi7afrqo9l84cgxdgwawel3r4dpupdnc'
+      self.event_auth_key = 'c36ee8e853b0149d26d4d31d1c495413'
     end
   end
 
@@ -21,12 +21,14 @@ module Natero
     yield(configuration) if block_given?
   end
 
-  def self.full_endpoint_uri(base_uri, version_uri, endpoint, *params)
-    base = self.uri(base_uri, version_uri) + '/' + endpoint
+  def self.full_endpoint_uri(base_uri, version_uri, *params)
+    base = self.uri(base_uri, version_uri)
 
-    params.each { |param| base << '/' + param } unless params.flatten.empty?
+    params.flatten!
+    binding.pry
+    params.each { |param| base << '/' + param } unless params.empty?
 
-    base + self.api_key_uri
+    base
   end
 
   def self.uri(base_uri, version_uri)
