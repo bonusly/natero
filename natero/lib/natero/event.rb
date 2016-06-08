@@ -9,7 +9,15 @@ class Natero::Event
   ### http://apidocs.natero.com/restapi.html ###
   ##############################################
 
-  def self.identify_user
+  REQUIRED_PARAMS = %w{
+    'account_id',
+    'user_id',
+    'created_at',
+    'action',
+    'session_id'
+  }
+
+  def self.identify_user(event)
 
   end
 
@@ -30,6 +38,12 @@ class Natero::Event
   end
 
   def initialize(params, raw_response = nil)
+    missing = REQUIRED_PARAMS - params.keys
+
+    unless missing.empty?
+      raise ArgumentError.new("Missing required params #{missing.join(', ')}")
+    end
+
     # Base properties - required
     @account_id = params['account_id']
     @user_id = params['user_id']
