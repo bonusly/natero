@@ -25,7 +25,9 @@ class Natero::Event
     action = 'identifyUser'
 
     body = event.to_json
-    body.merge!(details)
+    body.merge!({ 'details' => details })
+
+    binding.pry
 
     post_event.(body)
   end
@@ -34,7 +36,7 @@ class Natero::Event
     action = 'identifyAccount'
 
     body = event.to_json
-    body.merge!(details)
+    body.merge!({ 'details' => details })
 
     post_event.(body)
   end
@@ -43,7 +45,7 @@ class Natero::Event
     action = 'sessionSync'
 
     body = event.to_json
-    body.merge!(active_duration)
+    body.merge!({ 'active_duration' => active_duration })
 
     post_event.(body)
   end
@@ -52,8 +54,8 @@ class Natero::Event
     action = 'moduleEnd'
 
     body = event.to_json
-    body.merge!(module_name)
-    body.merge!(time_spent)
+    body.merge!({ 'module' => module_name })
+    body.merge!({ 'time_spent' => time_spent })
 
     post_event.(body)
   end
@@ -62,8 +64,8 @@ class Natero::Event
     action = 'feature'
 
     body = event.to_json
-    body.merge!(module_name)
-    body.merge!(total)
+    body.merge!({ 'module' => module_name })
+    body.merge!({ 'total' => total })
 
     post_event.(body)
   end
