@@ -10,10 +10,10 @@ class Natero::Event
   ##############################################
 
   REQUIRED_PARAMS = %w{
-    'account_id',
-    'user_id',
-    'created_at',
-    'action',
+    'account_id'
+    'user_id'
+    'created_at'
+    'action'
     'session_id'
   }
 
