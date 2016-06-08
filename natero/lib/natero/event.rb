@@ -5,7 +5,7 @@ class Natero::Event
   BASE_URI = 'https://events.natero.com'
   VERSION_URI = '/v1'
 
-  attr_reader :account_id, :user_id, :created_at, :session_id
+  attr_reader :account_id, :user_id, :created_at, :session_id, :raw_response
 
   ##############################################
   ###     Documentation for all endpoints    ###
@@ -91,6 +91,7 @@ class Natero::Event
     @user_id = params['user_id']
     @created_at = params['created_at']
     @session_id = params['session_id']
+    @raw_response = raw_response
   end
 
   def to_json
