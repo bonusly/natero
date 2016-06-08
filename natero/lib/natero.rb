@@ -3,15 +3,10 @@ require 'json'
 require 'pry'
 
 module Natero
-  PRODUCTION_URI = 'https://api.natero.com'
-
-  API_VERSION_URI = '/api/v2'
-
   class Configuration
     attr_accessor :base_uri, :account_api_key, :event_api_key, :event_auth_key
 
     def initialize
-      self.base_uri = PRODUCTION_URI
       self.account_api_key = nil
       self.event_api_key = nil
       self.event_auth_key = nil
@@ -26,16 +21,16 @@ module Natero
     yield(configuration) if block_given?
   end
 
-  def self.full_endpoint_uri(endpoint, *params)
-    base = self.uri + '/' + endpoint
+  def self.full_endpoint_uri(base_uri, version_uri, endpoint, *params)
+    base = self.uri(base_uri, version_uri) + '/' + endpoint
 
     params.each { |param| base << '/' + param } unless params.flatten.empty?
 
     base + self.api_key_uri
   end
 
-  def self.uri
-    Natero.configuration.base_uri + API_VERSION_URI
+  def self.uri(base_uri, version_uri)
+    base_uri + version_uri
   end
 
   def self.api_key_uri

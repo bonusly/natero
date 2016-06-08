@@ -2,6 +2,9 @@ class Natero::Account
   include HTTParty
   include Serializable
 
+  BASE_URI = 'https://api.natero.com'
+  VERSION_URI = '/api/v2'
+
   attr_reader :account_id, :name, :join_date, :renewal_date,
               :billing_account_id, :support_account_id, :crm_account_id,
               :billing_street, :billing_city, :billing_postal_code,
@@ -94,7 +97,7 @@ class Natero::Account
   end
 
   def self.endpoint(*params)
-    Natero.full_endpoint_uri('accounts', params)
+    Natero.full_endpoint_uri(BASE_URI, VERSION_URI, 'accounts', params)
   end
 
   def initialize(params, raw_response = nil)

@@ -2,6 +2,9 @@ class Natero::Event
   include HTTParty
   include Serializable
 
+  BASE_URI = 'https://events.natero.com'
+  VERSION_URI = '/v1'
+
   attr_reader
 
   ##############################################
@@ -17,24 +20,57 @@ class Natero::Event
     'session_id'
   }
 
-  def self.identify_user(event)
+  post_event = -> (body) { Natero::Response.new(post(endpoint, { :body => body })) }
 
+  def self.identify_user(event, details)
+    action = 'identifyUser'
+
+    body = event.to_json
+    body.merge!(details)
+
+    post_event.(body)
   end
 
-  def self.identify_account
+  def self.identify_account(event, details)
+    action = 'identifyAccount'
 
+    body = event.to_json
+    body.merge!(details)
+
+    post_event.(body)
   end
 
-  def self.session_sync
+  def self.session_sync(event, active_duration)
+    action = 'sessionSync'
 
+    body = event.to_json
+    body.merge!(active_duration)
+
+    post_event.(body)
   end
 
-  def self.module_end
+  def self.module_end(event, module_name, time_spent)
+    action = 'moduleEnd'
 
+    body = event.to_json
+    body.merge!(module_name)
+    body.merge!(time_spent)
+
+    post_event.(body)
   end
 
-  def self.feature
+  def self.feature(event, module_name, total)
+    action = 'feature'
 
+    body = event.to_json
+    body.merge!(module_name)
+    body.merge!(total)
+
+    post_event.(body)
+  end
+
+  def self.endpoint(*params)
+    Natero.full_endpoint_url(BASE_URI, VERSION_URI, 'events', params)
   end
 
   def initialize(params, raw_response = nil)
@@ -50,12 +86,6 @@ class Natero::Event
     @created_at = params['created_at']
     @action = params['action']
     @session_id = params['session_id']
-    # Endpoint-specific
-    @details = params['details']
-    @active_duration = params['active_duration']
-    @module = params['module']
-    @time_spent = params['time_spent']
-    @total = params['total']
   end
 
   def to_json
