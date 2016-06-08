@@ -5,7 +5,7 @@ class Natero::Event
   BASE_URI = 'https://events.natero.com'
   VERSION_URI = '/v1'
 
-  attr_reader
+  attr_reader :account_id, :user_id, :created_at, :session_id
 
   ##############################################
   ###     Documentation for all endpoints    ###
@@ -19,15 +19,16 @@ class Natero::Event
     session_id
   }
 
-  post_event = -> (body) { Natero::Response.new(post(endpoint, { :body => body })) }
+  private_class_method def post_event(body)
+    Natero::Response.new(post(endpoint, { :body => body }))
+  end
 
   def self.identify_user(event, details)
     action = 'identifyUser'
 
     body = event.to_json
+    body.merge!({ 'action' => action })
     body.merge!({ 'details' => details })
-
-    binding.pry
 
     post_event.(body)
   end
@@ -36,6 +37,7 @@ class Natero::Event
     action = 'identifyAccount'
 
     body = event.to_json
+    body.merge!({ 'action' => action })
     body.merge!({ 'details' => details })
 
     post_event.(body)
@@ -45,6 +47,7 @@ class Natero::Event
     action = 'sessionSync'
 
     body = event.to_json
+    body.merge!({ 'action' => action })
     body.merge!({ 'active_duration' => active_duration })
 
     post_event.(body)
@@ -54,6 +57,7 @@ class Natero::Event
     action = 'moduleEnd'
 
     body = event.to_json
+    body.merge!({ 'action' => action })
     body.merge!({ 'module' => module_name })
     body.merge!({ 'time_spent' => time_spent })
 
@@ -64,6 +68,7 @@ class Natero::Event
     action = 'feature'
 
     body = event.to_json
+    body.merge!({ 'action' => action })
     body.merge!({ 'module' => module_name })
     body.merge!({ 'total' => total })
 
