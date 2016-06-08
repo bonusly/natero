@@ -13,10 +13,10 @@ class Natero::Event
   ##############################################
 
   REQUIRED_PARAMS = %w{
-    'account_id'
-    'user_id'
-    'created_at'
-    'session_id'
+    account_id
+    user_id
+    created_at
+    session_id
   }
 
   post_event = -> (body) { Natero::Response.new(post(endpoint, { :body => body })) }
