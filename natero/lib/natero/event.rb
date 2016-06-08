@@ -18,8 +18,8 @@ class Natero::Event
     created_at
     session_id
   }
-
-  private_class_method def post_event(body)
+  
+  private_class_method def self.post_event(body)
     Natero::Response.new(post(endpoint, { :body => body }))
   end
 
