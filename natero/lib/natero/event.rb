@@ -20,7 +20,7 @@ class Natero::Event
   }
   
   private_class_method def self.post_event(body)
-    Natero::Response.new(post(endpoint, { :body => body.to_json }))
+    Natero::Response.new(post(endpoint, { :body => body.to_json, :headers => { 'Content-Type' => 'application/json' } }))
   end
 
   def self.identify_user(event, details)
