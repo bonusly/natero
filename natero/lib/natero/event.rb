@@ -64,11 +64,12 @@ class Natero::Event
     post_event(body)
   end
 
-  def self.feature(event, module_name, total)
+  def self.feature(event, feature, module_name, total)
     action = 'feature'
 
     body = event.to_h
     body.merge!({ 'action' => action })
+    body.merge!({ 'feature' => feature })
     body.merge!({ 'module' => module_name })
     body.merge!({ 'total' => total })
 
