@@ -16,7 +16,6 @@ class Natero::Event
     'account_id'
     'user_id'
     'created_at'
-    'action'
     'session_id'
   }
 
@@ -84,7 +83,6 @@ class Natero::Event
     @account_id = params['account_id']
     @user_id = params['user_id']
     @created_at = params['created_at']
-    @action = params['action']
     @session_id = params['session_id']
   end
 
