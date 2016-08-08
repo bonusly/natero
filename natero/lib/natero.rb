@@ -1,6 +1,5 @@
 require 'httparty'
 require 'json'
-require 'pry'
 
 module Natero
   class Configuration
