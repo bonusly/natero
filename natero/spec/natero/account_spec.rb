@@ -66,4 +66,178 @@ describe Natero::Account do
       Natero::Account.modify(id, acc)
     end
   end
+
+  describe 'retrieve_custom_metrics' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/metrics/?api_key=#{api_key}"
+      data = nil
+      method = :get
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.retrieve_custom_metrics(id)
+    end
+  end
+
+  describe 'retrieve_invoice_statements' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/statements/?api_key=#{api_key}"
+      data = nil
+      method = :get
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.retrieve_invoice_statements(id)
+    end
+  end
+
+  describe 'retrieve_subscription_history' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/subscriptions/?api_key=#{api_key}"
+      data = nil
+      method = :get
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.retrieve_subscription_history(id)
+    end
+  end
+
+  describe 'retrieve_support_tickets' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/support_tickets/?api_key=#{api_key}"
+      data = nil
+      method = :get
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.retrieve_support_tickets(id)
+    end
+  end
+
+  describe 'retrieve_product_users' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/users/?api_key=#{api_key}"
+      data = nil
+      method = :get
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.retrieve_product_users(id)
+    end
+  end
+
+  describe 'retrieve_contacts' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/contacts/?api_key=#{api_key}"
+      data = nil
+      method = :get
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.retrieve_contacts(id)
+    end
+  end
+
+  describe 'deactivate_account' do
+    it 'sends the proper request' do
+      id = 1
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/?api_key=#{api_key}"
+      data = nil
+      method = :delete
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.deactivate_account(id)
+    end
+  end
+
+  describe 'delete_stage_history' do
+    it 'sends the proper request' do
+      id = 1
+      name = 'paul'
+      timestamp = '1000000'
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/stage_history/#{name}/#{timestamp}/?api_key=#{api_key}"
+      data = nil
+      method = :delete
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.delete_stage_history(id, name, timestamp)
+    end
+  end
+
+  describe 'delete_dimension_values' do
+    it 'sends the proper request' do
+      id = 1
+      key = 'so_random'
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/dimension_values/#{key}/?api_key=#{api_key}"
+      data = nil
+      method = :delete
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.delete_dimension_values(id, key)
+    end
+  end
+
+  describe 'delete_dimension_labels' do
+    it 'sends the proper request' do
+      id = 1
+      key = 'so_random'
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/dimension_labels/#{key}/?api_key=#{api_key}"
+      data = nil
+      method = :delete
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.delete_dimension_labels(id, key)
+    end
+  end
+
+  describe 'delete_assigned_csm_reps' do
+    it 'sends the proper request' do
+      id = 1
+      email = 'bob@acme.com'
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/assigned_csms/#{email}/?api_key=#{api_key}"
+      data = nil
+      method = :delete
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.delete_assigned_csm_reps(id, email)
+    end
+  end
+
+  describe 'delete_nps_history' do
+    it 'sends the proper request' do
+      id = 1
+      timestamp = 10000
+      request_url = "https://api.natero.com/api/v2/accounts/#{id}/nps_history/#{timestamp}/?api_key=#{api_key}"
+      data = nil
+      method = :delete
+
+      expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
+      expect(Natero::Response).to receive(:new)
+
+      Natero::Account.delete_nps_history(id, timestamp)
+    end
+  end
 end
