@@ -1,2 +1,3 @@
-# natero
+# Natero
+
 Wrapper for Natero API
