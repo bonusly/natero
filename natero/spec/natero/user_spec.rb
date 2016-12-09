@@ -68,8 +68,8 @@ describe Natero::User do
   describe 'modify' do
     it 'sends the proper request' do
       id = 1
-      acc = account.new(1, 'test')
-      request_url = "https://api.natero.com/api/v2/account_users/1/?api_key=#{api_key}"
+      acc = account.new(id, 'test')
+      request_url = "https://api.natero.com/api/v2/account_users/#{id}/?api_key=#{api_key}"
       data = { body: '{"id":1,"name":"test"}',
                headers: {'Content-Type': 'application/json'} }
       method = :put
@@ -85,7 +85,7 @@ describe Natero::User do
     it 'sends the proper request without an account_id' do
       id = 1
       account_id = nil
-      request_url = "https://api.natero.com/api/v2/account_users/1/?api_key=#{api_key}"
+      request_url = "https://api.natero.com/api/v2/account_users/#{id}/?api_key=#{api_key}"
       data = nil
       method = :delete
 
@@ -98,7 +98,7 @@ describe Natero::User do
     it 'sends the proper request without an account_id' do
       id = 1
       account_id = 5
-      request_url = "https://api.natero.com/api/v2/account_users/1/5/?api_key=#{api_key}"
+      request_url = "https://api.natero.com/api/v2/account_users/#{id}/#{account_id}/?api_key=#{api_key}"
       data = nil
       method = :delete
 
