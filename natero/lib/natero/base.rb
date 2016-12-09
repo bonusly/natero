@@ -15,7 +15,10 @@ class Natero::Base
   end
 
   def self.endpoint_path
-    raise NotImplementedError.new('This method needs to be overridden in a child class.')
+    raise NotImplementedError.new(
+        'This method needs to be overridden in a child class.  Proper implementation should return an array where '\
+        'each index contains a different part of the path.  For example: [\'test\', \'best\'] becomes \'/test/best/\'.'
+    )
   end
 
   def self.json_data(body)
