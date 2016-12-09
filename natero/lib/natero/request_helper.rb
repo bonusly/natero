@@ -1,6 +1,6 @@
 require 'httparty'
 
-module Natero::RequestHelper
+class Natero::RequestHelper
   def get(path_params=[], data=nil)
     request(:get, path_params, data)
   end
@@ -18,10 +18,14 @@ module Natero::RequestHelper
   end
 
   def request(method, path_params=[], data=nil)
-    parse_response(HTTParty.send(method, endpoint(path_params), data))
+    parse_response(HTTParty.send(method, @model.endpoint(path_params), data))
   end
 
   def parse_response(raw_response)
     Natero::Response.new(raw_response)
+  end
+
+  def initialize(model)
+    @model = model
   end
 end

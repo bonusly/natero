@@ -1,5 +1,4 @@
 class Natero::Base
-  extend Natero::RequestHelper
   include Serializable
 
   BASE_URI = 'https://api.natero.com'
@@ -9,16 +8,19 @@ class Natero::Base
 
   attr_reader :raw_response
 
+  class << self
+    delegate :get, :post, :put, :delete, to: :request_helper, allow_nil: true
+  end
+
   def self.endpoint(*params)
     params = [endpoint_path, params, Natero.api_key_uri].flatten.compact.map(&:to_s)
     Natero.full_endpoint_uri(BASE_URI, VERSION_URI, params)
   end
 
   def self.endpoint_path
-    raise NotImplementedError.new(
-        'This method needs to be overridden in a child class.  Proper implementation should return an array where '\
-        'each index contains a different part of the path.  For example: [\'test\', \'best\'] becomes \'/test/best/\'.'
-    )
+    raise NotImplementedError.new( 'This method needs to be overridden in a child class.  Proper implementation '\
+        'should return an array where each index contains a different part of the path.  For example: '\
+        '[\'test\', \'best\'] becomes \'/test/best/\'.' )
   end
 
   def self.json_data(body)
@@ -27,6 +29,10 @@ class Natero::Base
 
   def self.json_headers
     { 'Content-Type': 'application/json' }
+  end
+
+  def self.request_helper
+    Natero::RequestHelper.new(self)
   end
 
   def initialize(params, raw_response = nil)

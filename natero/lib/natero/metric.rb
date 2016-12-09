@@ -1,20 +1,18 @@
 class Natero::Metric < Natero::Base
   def self.retrieve(name)
-    Natero::Response.new(get(endpoint(name)))
+    get([name])
   end
 
   def self.bulk_insert_modify(metrics)
-    body = Natero.to_records_json(metrics)
-    Natero::Response.new(post(endpoint, { :body => body, :headers => { 'Content-Type' => 'application/json' } }))
+    post([], json_data(Natero.to_records_json(metrics)))
   end
 
   def self.modify(name, metric)
-    body = metric.to_json
-    Natero::Response.new(put(endpoint(name), { :body => body, :headers => { 'Content-Type' => 'application/json'} }))
+    put([name], json_data(metric.to_json))
   end
 
   def self.delete(name)
-    Natero::Response.new(delete(endpoint(name)))
+    request_helper.delete([name])
   end
 
   def self.endpoint_path
