@@ -43,6 +43,9 @@ module Natero
 end
 
 require_relative 'natero/serializable'
+require_relative 'natero/request_helper'
+require_relative 'natero/base'
+require_relative 'natero/user'
 require_relative 'natero/account'
 require_relative 'natero/event'
 require_relative 'natero/response'
