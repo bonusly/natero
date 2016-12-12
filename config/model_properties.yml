@@ -1,0 +1,100 @@
+---
+Natero::Base:
+  source: ~
+  properties:
+
+Natero::Account:
+  source: http://apidocs.natero.com/apidoc.html#Accounts
+  properties:
+  - account_id
+  - name
+  - join_date
+  - renewal_date
+  - billing_account_id
+  - support_account_id
+  - crm_account_id
+  - billing_street
+  - billing_city
+  - billing_postal_code
+  - billing_state
+  - billing_country
+  - phone
+  - employees
+  - industry
+  - tier
+  - csm_score
+  - current_nps_score
+  - sales_rep_name
+  - sales_rep_email
+  - source
+  - stage
+  - is_deleted
+  - is_churned
+  - inactive_time
+  - inactive_reason
+  - parent_account_id
+  - hierarchy_label
+  - is_leaf
+  - latest_status_title
+  - latest_status_details
+  - latest_status_date
+  - assigned_csms
+  - custom_label_dimensions
+  - custom_value_dimensions
+  - custom_event_dimensions
+  - stage_history
+  - nps_history
+
+Natero::Event:
+  source: http://apidocs.natero.com/restapi.html
+  properties:
+  - account_id
+  - action
+  - active_duration
+  - created_at
+  - details
+  - feature
+  - module
+  - product
+  - session_id
+  - time_spent
+  - total
+  - user_id
+
+Natero::Metric:
+  source: http://apidocs.natero.com/apidoc.html#Custom%20Metrics
+  properties:
+  - account_id
+  - name
+  - metrics
+  - direction
+  - page
+
+Natero::User:
+  source: http://apidocs.natero.com/apidoc.html#Accounts%20Product%20Users
+  properties:
+  - user_id
+  - account_id
+  - first_name
+  - last_name
+  - contact_user_id
+  - phone
+  - mobile_phone
+  - email
+  - salutation
+  - title
+  - role
+  - department
+  - source
+  - mailing_street
+  - mailing_city
+  - mailing_state
+  - mailing_postal_code
+  - mailing_country
+  - lead_source
+  - product_join_date
+  - is_active
+  - custom_label_dimensions
+  - custom_value_dimensions
+  - custom_event_dimensions
+...

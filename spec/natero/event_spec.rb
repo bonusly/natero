@@ -49,7 +49,7 @@ describe Natero::Event do
       details = 'detail!'
       request_url = "https://events.natero.com/v1/#{event_auth_key}/#{event_api_key}"
       data = {body: {id:1, name:'test', action:'identifyAccount', details: details},
-              header: {'Content-Type': 'application/json'}}
+              headers: {'Content-Type': 'application/json'}}
       method = :post
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
