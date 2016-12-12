@@ -40,9 +40,16 @@ module Natero
   def self.to_records_json(objects)
     "{\"records\": #{Array(objects).map(&:serialize)}}".to_s.delete('\\').gsub('"{', '{').gsub('}"', '}')
   end
+
+  def self.gem_root
+    File.expand_path('../..', __FILE__)
+  end
 end
 
 require_relative 'natero/serializable'
+require_relative 'natero/request_helper'
+require_relative 'natero/base'
+require_relative 'natero/user'
 require_relative 'natero/account'
 require_relative 'natero/event'
 require_relative 'natero/response'

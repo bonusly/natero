@@ -6,8 +6,8 @@ require 'natero/version'
 Gem::Specification.new do |spec|
   spec.name          = 'natero'
   spec.version       = Natero::VERSION
-  spec.authors       = 'Andrew Brown'
-  spec.email         = 'abbrown22@gmail.com'
+  spec.authors       = ['Andrew Brown', 'Robert Ingrum']
+  spec.email         = 'dev@bonus.ly'
   spec.summary       = 'Wrapper for Natero API'
   spec.description   = %q{
     Natero is customer success software used to reduce churn and increase B2B SaaS adoption.
@@ -24,4 +24,8 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 1.11'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
+  spec.add_development_dependency 'rspec-rails'
+  spec.add_development_dependency 'spring'
+  spec.add_development_dependency 'spring-commands-rspec'
+  spec.add_development_dependency 'spring-commands-cucumber'
 end
