@@ -39,7 +39,9 @@ class Natero::Base
     missing_params = REQUIRED_PARAMS - params.keys
     raise ArgumentError.new("Missing required params #{missing_params.join(', ')}") unless missing_params.empty?
 
-    load_properties(params)
+    load_model_properties
+    populate_properties(params)
+
     @raw_response = raw_response
   end
 
@@ -47,14 +49,18 @@ class Natero::Base
     serialize
   end
 
-  def load_properties(params)
-    model_config_file = "#{Natero.gem_root}/config/model_properties.yml"
-    model_config = YAML::load(File.read(model_config_file))[self.class.name.to_s].with_indifferent_access
-    model_config[:properties].each do |prop|
-      next unless params.include?(prop.to_sym)
+  private
 
-      instance_variable_set("@#{prop}", params[prop.to_sym])
-      self.class.class_eval { attr_reader prop.to_sym }
-    end
+  def load_model_properties
+    model_config[:properties].each { |prop| self.class.class_eval { attr_accessor prop.to_sym } }
+  end
+
+  def populate_properties(params)
+    params.each { |key, value| instance_variable_set("@#{key}", value) }
+  end
+
+  def model_config
+    @model_config ||=
+        YAML::load(File.read("#{Natero.gem_root}/config/model_properties.yml"))[self.class.name.to_s].with_indifferent_access
   end
 end
