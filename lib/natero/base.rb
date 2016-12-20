@@ -60,7 +60,6 @@ class Natero::Base
   end
 
   def model_config
-    @model_config ||=
-        YAML::load(File.read("#{Natero.gem_root}/config/model_properties.yml"))[self.class.name.to_s].with_indifferent_access
+    YAML::load(File.read("#{Natero.gem_root}/config/model_properties.yml"))[self.class.name.to_s].with_indifferent_access
   end
 end
