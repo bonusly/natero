@@ -40,6 +40,7 @@ class Natero::Base
     raise ArgumentError.new("Missing required params #{missing_params.join(', ')}") unless missing_params.empty?
 
     load_model_properties
+    params = clean_params(params)
     populate_properties(params)
 
     @raw_response = raw_response
@@ -53,6 +54,10 @@ class Natero::Base
 
   def load_model_properties
     model_config[:properties].each { |prop| self.class.class_eval { attr_accessor prop.to_sym } }
+  end
+
+  def clean_params(params)
+    params.each { |_, value| value.gsub!(/"/, '') if value.respond_to?(:gsub!) }
   end
 
   def populate_properties(params)
