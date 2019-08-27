@@ -19,12 +19,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency             'httparty',             '~> 0.13'
-  spec.add_development_dependency 'bundler',              '~> 1.11'
+  spec.add_development_dependency 'bundler',              '> 1.11'
   spec.add_development_dependency 'rake',                 '~> 10.0'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'rails-html-sanitizer', '~> 1.0.4'
   spec.add_development_dependency 'loofah',               '>= 2.2.3'
+  spec.add_development_dependency 'nokogiri',             '>= 1.10.4'
   spec.add_development_dependency 'spring'
   spec.add_development_dependency 'spring-commands-rspec'
   spec.add_development_dependency 'spring-commands-cucumber'
