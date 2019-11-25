@@ -13,7 +13,7 @@ describe Natero::Metric do
     it 'sends the proper request' do
       name = 'ted'
       request_url = "https://api.natero.com/api/v2/metrics/#{name}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -58,7 +58,7 @@ describe Natero::Metric do
     it 'sends the proper request' do
       name = 'ted'
       request_url = "https://api.natero.com/api/v2/metrics/#{name}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
