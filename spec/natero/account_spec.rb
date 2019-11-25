@@ -12,7 +12,7 @@ describe Natero::Account do
   describe 'retrieve_all' do
     it 'sends the proper request' do
       request_url = "https://api.natero.com/api/v2/accounts/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -26,7 +26,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -71,7 +71,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/metrics/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -85,7 +85,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/statements/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -99,7 +99,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/subscriptions/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -113,7 +113,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/support_tickets/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -127,7 +127,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/users/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -141,7 +141,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/contacts/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :get
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -155,7 +155,7 @@ describe Natero::Account do
     it 'sends the proper request' do
       id = 1
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -171,7 +171,7 @@ describe Natero::Account do
       name = 'paul'
       timestamp = '1000000'
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/stage_history/#{name}/#{timestamp}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -186,7 +186,7 @@ describe Natero::Account do
       id = 1
       key = 'so_random'
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/dimension_values/#{key}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -201,7 +201,7 @@ describe Natero::Account do
       id = 1
       key = 'so_random'
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/dimension_labels/#{key}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -216,7 +216,7 @@ describe Natero::Account do
       id = 1
       email = 'bob@acme.com'
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/assigned_csms/#{email}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
@@ -231,7 +231,7 @@ describe Natero::Account do
       id = 1
       timestamp = 10000
       request_url = "https://api.natero.com/api/v2/accounts/#{id}/nps_history/#{timestamp}/?api_key=#{api_key}"
-      data = nil
+      data = {}
       method = :delete
 
       expect(HTTParty).to receive(method).with(request_url, data).and_return(valid_message)
