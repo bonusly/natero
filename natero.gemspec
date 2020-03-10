@@ -26,7 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec-rails'
   spec.add_development_dependency 'rails-html-sanitizer', '~> 1.0.4'
   spec.add_development_dependency 'loofah',               '>= 2.3.1'
-  spec.add_development_dependency 'nokogiri',             '>= 1.10.4'
+  spec.add_development_dependency 'nokogiri',             '>= 1.10.9'
   spec.add_development_dependency 'spring'
   spec.add_development_dependency 'spring-commands-rspec'
   spec.add_development_dependency 'spring-commands-cucumber'
