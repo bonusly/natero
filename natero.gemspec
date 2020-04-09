@@ -12,6 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'Natero is customer success software used to reduce churn and increase B2B SaaS adoption.'
   spec.homepage      = 'http://bonus.ly'
   spec.license       = 'MIT'
+  spec.post_install_message = 'The Natero gem has been deprecated and will no longer be supported. Please switch to using the Freshworks gem. See https://rubygems.org/gems/freshworks and https://github.com/bonusly/freshworks.'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = 'exe'

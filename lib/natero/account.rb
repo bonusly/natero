@@ -1,5 +1,6 @@
 class Natero::Account < Natero::Base
   def self.retrieve_all
+    warn "[DEPRECATION] The Natero gem has been deprecated and will no longer be supported. Please switch to using the Freshworks gem. See https://rubygems.org/gems/freshworks and https://github.com/bonusly/freshworks."
     get
   end
 

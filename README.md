@@ -5,6 +5,8 @@
 [branch]:   http://learn.github.com/p/branching.html
 [pr]:       http://help.github.com/send-pull-requests/
 
+This gem has been replaced by the Freshworks gem and will no longer be supported. Please switch to [Freshworks](https://github.com/bonusly/freshworks) as soon as possible.
+
 # Natero Gem
 A Ruby interface for the [Natero Public API][api-docs].
 
@@ -40,7 +42,7 @@ Modify an account:
 ```Ruby
 account = Natero::Account.retrieve('ACCOUNT_ID')
 account.name = 'TEST'
- 
+
 Natero::Account.modify('ACCOUNT_ID', account)
 ```
 
@@ -48,7 +50,7 @@ Create an event:
 ```Ruby
 event   = { id: 'test', name: 'Testing the API.'}
 details = 'These details should be associated with the event in Natero'
- 
+
 Natero::Event.create(event, details)
 ```
 
@@ -67,7 +69,7 @@ improve this project. Here are some ways *you* can contribute:
 #### Submitting an issue:
 We use the [GitHub issue tracker][issues] to track bugs and features. Before
 submitting a bug report or feature request, check to make sure it hasn't
-already been submitted. When submitting a bug report, please include a stack 
+already been submitted. When submitting a bug report, please include a stack
 trace and any details that may be necessary to reproduce
 the bug, including your gem version, Ruby version, and operating system.
 Ideally, a bug report should include a pull request with failing specs.
