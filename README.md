@@ -86,3 +86,11 @@ Ideally, a bug report should include a pull request with failing specs.
 9. [Submit a pull request.][pr]
 
 _(Shamelessly based on the [Twitter Gem](https://github.com/sferik/twitter))_
+
+## About Bonusly
+
+![Bonusly Logo](https://bonusly-files.s3.amazonaws.com/bonusly-logo.png?small)
+
+Bonusly is the fun and easy way to engage all of your employees and improve retention and productivity at every level of your organization.
+
+Check out [our product](https://bonus.ly) or [our engineering blog](https://engineering.bonus.ly).
